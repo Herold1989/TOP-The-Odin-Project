@@ -1,4 +1,17 @@
 /* styles.css */
+*{
+  box-sizing: border-box;
+}
+
+.top { 
+  background-color: black;
+  padding: 20px;
+  border: 20px solid rgb(141, 57, 57);
+}
+
+.container {
+  background-color: hsl(120, 18%, 47%);
+}
 
 body {
   color: white;
