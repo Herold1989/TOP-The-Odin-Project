@@ -3,6 +3,8 @@
     background-color: aquamarine;
     border: 0.35rem solid green;
     padding: 4rem;
+    flex-direction: column;
+    gap: 2rem;
 
 }
 
@@ -12,7 +14,9 @@
     background-color: blue;
     margin: auto;
     width: 100%;
-    gap: 1rem;
+    gap: 2rem;
+    padding: 1rem;
+    flex: 1
 }
 
 .smallbox-1, .smallbox-2, .smallbox-3 {
