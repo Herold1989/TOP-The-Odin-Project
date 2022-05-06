@@ -1,0 +1,37 @@
+.container {
+    display: flex;
+    background-color: aquamarine;
+    border: 0.35rem solid green;
+    padding: 4rem;
+
+}
+
+.smallbox {
+    display: flex;
+    border: 0.35rem solid rgb(53, 0, 128);
+    background-color: blue;
+    margin: auto;
+    width: 100%;
+    gap: 1rem;
+}
+
+.smallbox-1, .smallbox-2, .smallbox-3 {
+    background-color: salmon;
+    border: 0.35rem solid rgb(75, 19, 13);
+    height: 4rem;
+    padding: 4rem;
+    flex: 1;
+}
+
+.smallbox-2 {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.smallbox-2-1, .smallbox-2-2  {
+    background-color: green;
+    border: 0.35rem solid rgb(75, 19, 13);
+    flex: 1;
+    padding: 6rem;
+}
