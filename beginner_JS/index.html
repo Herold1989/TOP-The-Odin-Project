@@ -17,6 +17,10 @@
     <p id="test"></p>
     <p id="sentence"></p>
     <button>Press me</button>
+    <p id="mylist"></p>
+
+    <p id="length"></p>
+    <button onclick="myFunction()">Try me</button>
 
     <script>
     // Your JavaScript goes here!
@@ -77,6 +81,19 @@
     const myString = '123';
     const myNum = Number(myString);
     console.log(typeof myNum);
+
+    // string slicing
+
+    let mylist = "Apple, Banana, Kiwi";
+    let mylistlength = mylist.length;
+
+    document.getElementById("mylist").innerHTML = mylist.slice(7,13)
+    document.getElementById("length").innerHTML = mylistlength
+
+    function myFunction() {
+        let text = document.getElementById("sentence").innerHTML;
+        document.getElementById("sentence").innerHTML = text.replace("siempre", "nunca");
+    }
 
 
 </script>
