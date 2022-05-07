@@ -16,6 +16,7 @@
     
     <p id="test"></p>
     <p id="sentence"></p>
+    <button>Press me</button>
 
     <script>
     // Your JavaScript goes here!
@@ -48,6 +49,19 @@
 
     console.log(sglDbl);
     console.log(dblSgl);
+
+    // create a button that returns a text
+    
+    const button = document.querySelector('button');
+    
+    function greet() {
+        const name = prompt('What is your name?') // pop-up that asks for name
+        alert(`Hello ${name}, nice to see you!`) // response
+    }
+
+    button.addEventListener('click', greet)
+
+
 
 </script>
 </body>
