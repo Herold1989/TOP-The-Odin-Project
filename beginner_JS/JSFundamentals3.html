@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Fundamentals Part 3</title>
+</head>
+<body>
+
+<p>First Question: Add 7: Used <p id="ex1in"></p> and received <p id="ex1out"></p>.</p>
+<p>Second Question: Multiply: Used <p id="ex2in"></p> and received <p id="ex2out"></p>.</p>
+
+    <script>
+        
+        // First exercise
+        const result = add7(10);
+        
+        function add7(num) {
+            const number = num+7
+            console.log(`You entered: ${num}, and got result: ${number}`);
+
+            document.getElementById("ex1out").innerHTML = number;
+            document.getElementById("ex1in").innerHTML =  num;
+            
+        }
+
+        // Second exercise
+        let a = 5;
+        let b = 15;
+       
+        const result2 = multiply(a,b);
+
+        function multiply(a,b) {
+            const number = a*b
+            console.log(`You entered: ${a},${b} and got result: ${number}`);
+
+            document.getElementById("ex2out").innerHTML = number;
+            document.getElementById("ex2in").innerHTML =  a +  "," + b;
+            
+        }
+
+        // third exercise
+        let text = "camelCaseDart";
+
+        const  string_res = capitalize(text) 
+
+        function capitalize(text) {
+
+            const firstLetter = text[0].toUpperCase()
+            const remainder   = (text.slice(1)).toLowerCase()
+            const result = firstLetter + remainder
+
+            console.log(`You entered: ${text} and got result: ${result}`);
+            
+        }
+        
+        let textinp = "abcdefghijk"
+        const last_result = LastLetter(textinp)
+
+        function LastLetter(textinp) {
+
+            const result = textinp.slice(-1)
+            console.log(`You entered: ${textinp} and got result: ${result}`);
+        }
+
+    </script>
+    
+</body>
+</html>
