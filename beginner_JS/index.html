@@ -15,6 +15,7 @@
     </script>
     
     <p id="test"></p>
+    <p id="sentence"></p>
 
     <script>
     // Your JavaScript goes here!
@@ -25,6 +26,11 @@
     let actual = max-13;
     let percentage = actual/max;
 
+    // lets work with strings
+
+    const sentence = "Hasta la victoria siempre."
+    const sglDbl = 'Would you eat a "fish supper"?';
+    const dblSgl = "I'm feeling blue.";
 
     console.log("Hello, World!")
     console.log(23 + 97)
@@ -35,6 +41,13 @@
     console.log(b) 
     console.log(percentage)
     document.getElementById("test").innerHTML = a + "<br>" + b;
+
+    // print strings
+    console.log(sentence)
+    document.getElementById("sentence").innerHTML = sentence;
+
+    console.log(sglDbl);
+    console.log(dblSgl);
 
 </script>
 </body>
