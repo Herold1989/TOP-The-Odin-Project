@@ -57,4 +57,69 @@ function PlayersMove(options) {
 }
 
 
+const result = DetermineWinner(result_computer,result_player)
+
+// Get Winner into HTML
+document.getElementById("winner").innerHTML = result;
+
+
+function DetermineWinner(result_computer,result_player) {
+    
+    if (result_computer == result_player) {
+        const winner = "Tie"
+        console.log(winner)
+        return winner
+    }
+
+    else if (result_computer == "Rock" && result_player == "Paper") {
+        const winner = "You win"
+        console.log(winner)
+        return winner
+
+    }
+
+    else if (result_computer == "Rock" && result_player == "Scissor") {
+        const winner = "You loose"
+        console.log(winner)
+        return winner
+
+    }
+
+    else if (result_computer == "Paper" && result_player == "Scissor") {
+        const winner = "You win"
+        console.log(winner)
+        return winner
+
+    }
+
+    else if (result_computer == "Paper" && result_player == "Rock") {
+        const winner = "You loose"
+        console.log(winner)
+        return winner
+
+    }
+
+    else if (result_computer == "Scissor" && result_player == "Rock") {
+        const winner = "You win"
+        console.log(winner)
+        return winner
+
+    }
+
+    else if (result_computer == "Scissor" && result_player == "Paper") {
+        const winner = "You loose"
+        console.log(winner)
+        return winner
+
+    }
+
+    else {
+        const winner = "Inapproriate choice made. Try again."
+        return winner
+
+    }
+
+    return winner
+}
+
 
