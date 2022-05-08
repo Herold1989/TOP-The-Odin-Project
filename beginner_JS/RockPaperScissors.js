@@ -1,11 +1,15 @@
-const result = ComputersMove();
+const options = ["Rock", "Paper", "Scissor"];
 
-function ComputersMove() {
+// Rock, Paper, Scissor choice made my computer
+
+const result_computer = ComputersMove(options);
+
+// Get result of Computers Move into HTML
+document.getElementById("computer").innerHTML = result_computer;
+
+// Computers Move
+function ComputersMove(options) {
     
-    // Rock, Paper, Scissor choice made my computer
-
-    const options = ["Rock", "Paper", "Scissor"];
-
     // Chose a option randomly, depending on number of different 
     // options to chose from.
 
@@ -21,9 +25,36 @@ function ComputersMove() {
     // Displayed string at this position is strategy played.
     const random_choice = Math.floor(Math.random(max)*max);screenY
     const computers_choice = options[random_choice];
-
-    console.log(typeof computers_choice);
-    // Get result into HTML
-    document.getElementById("computer").innerHTML = computers_choice;
+    return computers_choice;
    
 }
+
+// Players Move
+const result_player = PlayersMove(options)
+
+// Get result of Player's Move into HTML
+document.getElementById("player").innerHTML = result_player;
+
+function PlayersMove(options) {
+    
+    let players_choice = prompt("Choose your strategy at Rock, Paper, Scissor.").toLowerCase() // pop-up that asks for name
+
+    // Check players_choice or throw alert if inappropriate players_choice
+    if (players_choice == options[0].toLowerCase()) {
+        console.log("You chose Rock")
+    } else if (players_choice == options[1].toLowerCase()) {    
+        console.log("You chose Paper")
+    } else if (players_choice == options[2].toLowerCase()) {    
+        console.log("You chose Scissor")
+
+    } else {
+    alert("Response must be either 'Rock', 'Paper' or 'Scissor' (case-insensitive). Try again!") // response
+
+    }
+
+    return players_choice[0].toUpperCase() + players_choice.slice(1).toLowerCase()
+
+}
+
+
+
