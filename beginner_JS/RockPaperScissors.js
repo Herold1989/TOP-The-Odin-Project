@@ -4,7 +4,7 @@
 const options = ["Rock", "Paper", "Scissor"];
 
 // Number of rounds to play until a winner is announced. 
-// Change is to whatever number you like.
+// Change this to whatever number you like. 
 
 const rounds  = 3;
 let score_player = 0;
