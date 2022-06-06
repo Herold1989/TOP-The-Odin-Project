@@ -1,6 +1,21 @@
 // Make responsive RPS Game-Code
 const options = ["rock", "paper", "scissor"]
 
+// to grab your score container
+const humanScore = document.querySelector('.yourPoints.yourScore');
+
+// to grab computer's score container
+const compScore = document.querySelector('.computerPoints.computerScore');
+
+// to grab result container
+const result = document.querySelector('.resultsContainer');
+
+
+const rounds  = 5;
+let score_player = 0;
+let score_computer = 0;
+
+
 // Computers Move
 function ComputersMove(options) {
 
@@ -81,6 +96,44 @@ function DetermineWinner(result_computer, result_player) {
         return winner
 }
 
+function countPoints(winner) {
+
+    if (score_player < rounds && score_computer < rounds) {
+    if (winner == "You win") {
+
+        score_player = score_player + 1;
+        
+        console.log("You win: New Score Player: " + score_player)
+        result.textContent = "You win: New Score Player: " + score_player
+        document.getElementById("computerPoints computerScore").innerHTML = score_computer;
+        document.getElementById("yourPoints yourScore").innerHTML = score_player;
+            
+    } else if (winner == "You loose") {
+               
+        score_computer = score_computer + 1;
+        console.log("Computer wins: New Score Computer: " + score_computer)
+        result.textContent = "Computer wins: New Score Computer: " + score_computer
+        document.getElementById("computerPoints computerScore").innerHTML = score_computer;
+        document.getElementById("yourPoints yourScore").innerHTML = score_player;
+        
+    } else {
+        console.log("No one got any points: It's a tie.")
+        result.textContent = "No one got any points: It's a tie."
+        document.getElementById("computerPoints computerScore").innerHTML = score_computer;
+        document.getElementById("yourPoints yourScore").innerHTML = score_player;
+    }
+} 
+
+if (score_player == rounds) {
+    result.textContent = "Congratulations! You beat the computer! You are the smartest human alive!"
+    button.style.visibility = 'visible';
+} else if (score_computer == rounds) {
+    result.textContent = "Good try! The computer got you this time. Try again soon!"
+    button.style.visibility = 'visible';
+}
+
+}
+
 // add action on buttons
 const rock_btn = document.querySelector('#rock');
 rock_btn.addEventListener('click', () => {
@@ -89,6 +142,7 @@ rock_btn.addEventListener('click', () => {
     computerSelection = ComputersMove(options);
     winner = DetermineWinner(computerSelection, playerSelection);
     console.log(winner);
+    countPoints(winner)
 })
 
 const paper_btn = document.querySelector('#paper');
@@ -98,6 +152,7 @@ paper_btn.addEventListener('click', () => {
     computerSelection = ComputersMove(options);
     winner = DetermineWinner(computerSelection, playerSelection);
     console.log(winner);
+    countPoints(winner)
 })
 
 const scissor_btn = document.querySelector('#scissor');
@@ -107,7 +162,24 @@ scissor_btn.addEventListener('click', () => {
     computerSelection = ComputersMove(options);
     winner = DetermineWinner(computerSelection, playerSelection);
     console.log(winner);
+    countPoints(winner)
 })
+
+// clicking button
+const button = document.querySelector('#again');
+button.addEventListener('click', () => {
+    let score_player = 0;
+    humanScore.textContent = score_player;
+    let score_computer = 0;
+    compScore.textContent = score_computer;
+    result.textContent = "";
+    button.style.visibility = 'hidden';
+
+})
+
+// Add scores to DOM
+//document.getElementById("computerPoints computerScore").innerHTML = score_computer;
+//document.getElementById("yourPoints yourScore").innerHTML = score_player;
 
 // // Current options availabe: Warning: Changes here effect working of 
 // // code. If you intend to play with more options, change 'PlayersMove' and 
