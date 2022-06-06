@@ -1,4 +1,4 @@
-.Gamepage {
+.body {
     
     padding: 7em 0;
     display: flex;
@@ -26,5 +26,19 @@
 }
 
 #title {
-    color: white;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.MainGame {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button {
+
+    margin: auto;
 }
