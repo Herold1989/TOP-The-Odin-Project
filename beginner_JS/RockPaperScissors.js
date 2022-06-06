@@ -126,11 +126,8 @@ function countPoints(winner) {
 
 if (score_player == rounds) {
     result.textContent = "Congratulations! You beat the computer! You are the smartest human alive!"
-    button.style.visibility = 'visible';
 } else if (score_computer == rounds) {
-    result.textContent = "Good try! The computer got you this time. Try again soon!"
-    button.style.visibility = 'visible';
-}
+    result.textContent = "Good try! The computer got you this time. Try again soon!"}
 
 }
 
@@ -165,17 +162,6 @@ scissor_btn.addEventListener('click', () => {
     countPoints(winner)
 })
 
-// clicking button
-const button = document.querySelector('#again');
-button.addEventListener('click', () => {
-    let score_player = 0;
-    humanScore.textContent = score_player;
-    let score_computer = 0;
-    compScore.textContent = score_computer;
-    result.textContent = "";
-    button.style.visibility = 'hidden';
-
-})
 
 // Add scores to DOM
 //document.getElementById("computerPoints computerScore").innerHTML = score_computer;
