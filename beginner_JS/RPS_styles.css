@@ -18,9 +18,13 @@
     background: url("images/RPS_background.jpg") no-repeat center center/cover;
     height: 100%;
     width: 100%;
-    opacity: 0.95;
+    opacity: 0.8;
     position: absolute;
     top: 0;
     left: 0;
     z-index: -1;
+}
+
+#title {
+    color: white;
 }
