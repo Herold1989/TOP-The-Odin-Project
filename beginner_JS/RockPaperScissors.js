@@ -17,7 +17,7 @@ function ComputersMove(options) {
     // Draw random number between min and max, random number 
     // becomes position in array the computer chooses.
     // Displayed string at this position is strategy played.
-    const random_choice = Math.floor(Math.random(max) * max); screenY
+    const random_choice = Math.floor(Math.random(max) * max);
     const computers_choice = options[random_choice];
     console.log("The computer chose: " + computers_choice)
     return computers_choice;
@@ -25,48 +25,48 @@ function ComputersMove(options) {
 
 function DetermineWinner(result_computer, result_player) {
 
-    if (result_computer == result_player) {
+    if (result_computer === result_player) {
         const winner = "Tie"
         //console.log(winner)
         return winner
     }
 
-    else if (result_computer == "Rock" && result_player == "Paper") {
+    else if (result_computer == "rock" && result_player == "paper") {
         const winner = "You win"
         //console.log(winner)
         return winner
 
     }
 
-    else if (result_computer == "Rock" && result_player == "Scissor") {
+    else if (result_computer == "rock" && result_player == "scissor") {
         const winner = "You loose"
         //console.log(winner)
         return winner
 
     }
 
-    else if (result_computer == "Paper" && result_player == "Scissor") {
+    else if (result_computer == "paper" && result_player == "scissor") {
         const winner = "You win"
         //console.log(winner)
         return winner
 
     }
 
-    else if (result_computer == "Paper" && result_player == "Rock") {
+    else if (result_computer == "paper" && result_player == "rock") {
         const winner = "You loose"
         //console.log(winner)
         return winner
 
     }
 
-    else if (result_computer == "Scissor" && result_player == "Rock") {
+    else if (result_computer == "scissor" && result_player == "rock") {
         const winner = "You win"
         // console.log(winner)
         return winner
 
     }
 
-    else if (result_computer == "Scissor" && result_player == "Paper") {
+    else if (result_computer == "scissor" && result_player == "paper") {
         const winner = "You loose"
         //console.log(winner)
         return winner
@@ -85,26 +85,28 @@ function DetermineWinner(result_computer, result_player) {
 const rock_btn = document.querySelector('#rock');
 rock_btn.addEventListener('click', () => {
     playerSelection = 'rock';
-    console.log(playerSelection);
+    console.log("You chose: " + playerSelection);
     computerSelection = ComputersMove(options);
-    winner = DetermineWinner(playerSelection, computerSelection);
+    winner = DetermineWinner(computerSelection, playerSelection);
     console.log(winner);
 })
 
 const paper_btn = document.querySelector('#paper');
 paper_btn.addEventListener('click', () => {
     playerSelection = 'paper';
-    console.log(playerSelection)
-    computerSelection = ComputersMove(options)
-    //playRound(playerSelection, computerSelection)
+    console.log("You chose: " + playerSelection)
+    computerSelection = ComputersMove(options);
+    winner = DetermineWinner(computerSelection, playerSelection);
+    console.log(winner);
 })
 
 const scissor_btn = document.querySelector('#scissor');
 scissor_btn.addEventListener('click', () => {
     playerSelection = 'scissor';
-    console.log(playerSelection)
-    computerSelection = ComputersMove(options)
-    //playRound(playerSelection, computerSelection)
+    console.log("You chose: " + playerSelection)
+    computerSelection = ComputersMove(options);
+    winner = DetermineWinner(computerSelection, playerSelection);
+    console.log(winner);
 })
 
 // // Current options availabe: Warning: Changes here effect working of 
