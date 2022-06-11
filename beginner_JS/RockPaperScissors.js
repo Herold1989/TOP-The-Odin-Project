@@ -162,6 +162,15 @@ scissor_btn.addEventListener('click', () => {
     countPoints(winner)
 })
 
+const again_btn = document.querySelector('#again');
+again_btn.addEventListener('click', () => {
+    console.log('pressed again')
+    score_player = 0;
+    score_computer = 0;
+
+    countPoints(winner)
+})
+
 
 // Add scores to DOM
 //document.getElementById("computerPoints computerScore").innerHTML = score_computer;
